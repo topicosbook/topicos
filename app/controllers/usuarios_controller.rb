@@ -4,21 +4,25 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
   def index
+    @usercrud = current_user
     @usuarios = Usuario.all
   end
 
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    @user = current_user
   end
 
   # GET /usuarios/new
   def new
+    @usernew = current_user
     @usuario = Usuario.new
   end
 
   # GET /usuarios/1/edit
   def edit
+    @useredit = current_user
   end
 
   # POST /usuarios
@@ -28,7 +32,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
+        format.html { redirect_to @usuario, notice: 'Usuário cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @usuario }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class UsuariosController < ApplicationController
   def update
     respond_to do |format|
       if @usuario.update(usuario_params)
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully updated.' }
+        format.html { redirect_to @usuario, notice: 'Usuário editado com sucesso.' }
         format.json { render :show, status: :ok, location: @usuario }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class UsuariosController < ApplicationController
   def destroy
     @usuario.destroy
     respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'Usuario was successfully destroyed.' }
+      format.html { redirect_to usuarios_url, notice: 'Usuário excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +68,7 @@ class UsuariosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
-      @usuario = Usuario.find(params[:id])
+        @usuario = Usuario.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

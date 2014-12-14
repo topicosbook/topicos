@@ -1,5 +1,17 @@
-<h1>New usuario</h1>
+<%  if @usernew != nil %> 
+	<div id="labelPerfil">
+		<h1>Cadastrar</h1>
+	</div>	
 
-<%= render 'form' %>
+  <fieldset id="fundoform">    
+	 <%= render 'form' %>
+  </fieldset>
 
-<%= link_to 'Back', usuarios_path %>
+  <div id="botaoc">  	
+	<%= link_to 'Voltar', usuarios_path %>
+  </div>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="http://localhost:3000/users/sign_in" 
+  </script>
+<% end %>

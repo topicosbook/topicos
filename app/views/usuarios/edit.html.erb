@@ -1,6 +1,20 @@
-<h1>Editing usuario</h1>
+<%  if @useredit != nil %>  
+  <div id="labelPerfil">
+    <p>
+      <h1>Editar</h1>
+    </p>
+  </div>
 
-<%= render 'form' %>
+  <fieldset id="fundoform">    
+	 <%= render 'form' %>
+  </fieldset>
 
-<%= link_to 'Show', @usuario %> |
-<%= link_to 'Back', usuarios_path %>
+  <div id="botaoc">    
+  	<%= link_to 'Exibir', @usuario %> |
+  	<%= link_to 'Voltar', usuarios_path %>
+  </div>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="http://localhost:3000/users/sign_in" 
+  </script>
+<% end %>

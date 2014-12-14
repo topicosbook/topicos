@@ -1,0 +1,21 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="labelPerfil">
+	<h1>Bem-Vindo!</h1>
+	<p id="mensagem" >
+		O novo "Yearbook It!" da disciplina de Tópicos Especiais da Computação acaba de chegar. Cadastre-se já e compartilhe com seus amigos .
+	</p>
+</div>
+
+<% @usuarios.each do |usuario| %>
+	<div class="entry">
+		<%= link_to "http://localhost:3000/usuarios/"+usuario.id.to_s do %>
+			<%= image_tag(usuario.foto) %>
+		<% end %>
+		<h3><%= usuario.nome %></h3>
+		<%= sanitize usuario.descricao %>
+	</div>
+<% end %>
+

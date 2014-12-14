@@ -1,0 +1,258 @@
+/* Global styles */
+
+#store #notice {
+        color: #000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
+
+
+#store h1 {
+        font:  150% sans-serif;
+        color: #226;
+        border-bottom: 3px outset #77d;
+}
+
+/* Styles for products/index */
+
+#usuario_list table {
+        border-collapse: collapse;
+}
+
+#usuario_list table tr td {
+        padding: 5px;
+        vertical-align: center;
+}
+
+#usuario_list .list_image {
+  width:        100px;
+  height:       100px;
+}
+
+#usuario_list .list_description {
+  width:        100%;
+}
+
+#usuario_list .list_description dl {
+        margin: 1px;
+}
+
+#usuario_list .list_description dt {
+	color:        #32CD32;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#usuario_list .list_description dd {
+        margin: 0;
+}
+
+/*botoes exibir editar excluir*/
+#usuario_list .list_actions {
+  text-decoration: none;
+  font-size:    large;
+  text-align:   center;
+}
+
+#botaoa {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ADD8E6;
+}
+
+#botaob {
+  padding-bottom: 5px;
+  padding-top: 5px;  
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #B0C4DE;
+}
+
+#botaoc {
+  font-size: large;
+  padding-bottom: 5px;
+  padding-top: 5px;  
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #90EE90;
+}
+#usuario_list .list_line_even {
+  background:   #E0FFFF;
+}
+
+#usuario_list .list_line_odd {
+  background:   #E6E6FA;
+}
+
+/* An entry in the store catalog */
+
+#store  .entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-top: 1px outset #77d;
+  border-bottom: 1px outset #77d;
+}
+
+#store  .title {
+  font-size: 120%;
+  font-family: sans-serif;
+}
+
+#store .entry img {
+  width: 100px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 2px;
+  float: left;
+}
+
+#store .entry h3 {
+ margin-top: 2px;
+ margin-bottom: 2px;
+ color: #FF7F50;
+}
+
+#store .entry p {
+ margin-top: 0.5em; 
+ margin-bottom: 0.8em; 
+}
+
+#store .entry .price_line {
+ clear: both;
+ margin-bottom: 0.5em;
+}
+
+#store .entry .add_to_cart {
+  position: relative;
+}
+
+#store .entry  .price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 2em;
+}
+
+#labelPerfil {
+  padding: 10px;
+  background: #B9D3EE;
+  text-decoration: blink;
+  font-size: 80%;
+  font-family: sans-serif;  
+}
+
+#cedula_A {
+  text-align: left;
+  background: #CAE1FF;
+}
+
+#cedula_B {
+  text-align: left;
+  background: #BCD2EE;
+}
+
+#fundo {
+  background: #EEEEE0;
+}
+
+/*Styles for main page*/
+#banner {
+  background: #B0C4DE;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+
+#banner img {
+  float: center;
+}
+
+#columns {
+  background: #DCDCDC;
+}
+
+#main {
+  margin-left: 12.5em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  /*float: left;*/
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  background: #B0C4DE;
+}
+
+#side a {
+  color: #bfb;
+  font-size: small;
+}
+
+p {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin: 1px;
+}
+
+p.logar {
+  text-align: right;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-right: 1em;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 1px;
+  background: #E6E6FA;   
+}
+
+#mensagem {
+  text-align: center;
+  background: #E6E6FA;
+  font-size: 26px;
+}
+
+#menu {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  background: #4682B4;
+}
+
+#cmpMenu {
+  font-size: 16px;
+  text-decoration: none;
+  margin: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: #E6E6FA;
+}
+
+#cmpLogar {
+  font-size: 16px;
+  text-decoration: none;
+  margin: 1px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: #E6E6FA;  
+}
+
+#fundoform {
+  background: #F0FFFF;
+}

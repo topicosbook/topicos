@@ -1,0 +1,29 @@
+<div id="usuario_list">
+<h1>Usuários</h1>
+<table>
+  <% @usuarios.each do |usuario| %>
+ <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td>
+    <%= image_tag(usuario.foto, :class => 'list_image') %>
+  </td>
+  <td class="list_description">
+    <dl>
+      <dt><%= usuario.nome %></dt>
+      <dt><%= usuario.cidade %></dt>
+      <dt><%= usuario.estado %></dt>
+      <dt><%= usuario.email %></dt>
+      <dt><%= usuario.descricao %></dt>
+      <dd><%= truncate(strip_tags(usuario.descricao),:length => 80)%></dd>
+    </dl>
+  </td>
+  <td class="list_actions">
+    <%= link_to 'Exibir', usuario %><br/>
+    <%= link_to 'Editar', edit_usuario_path(usuario) %><br/>
+    <%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %>
+  </td>
+</tr>
+<% end %>
+</table>
+</div>
+<br />
+<%= link_to 'Novo usuário', new_usuario_path %>

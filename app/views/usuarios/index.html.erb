@@ -1,39 +1,45 @@
-<h1>Listing usuarios</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Login</th>
-      <th>Senha</th>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Cidade</th>
-      <th>Estado</th>
-      <th>Email</th>
-      <th>Descricao</th>
-      <th colspan="3"></th>
+    <%  if @usercrud != nil %> 
+<div id="usuario_list">
+      <div id="labelPerfil">
+        <h1>Usuários</h1>
+      </div>
+    <table>
+      <% @usuarios.each do |usuario| %>
+     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td>
+        <%= image_tag(usuario.foto, :class => 'list_image') %>
+      </td>
+      <td class="list_description">
+        <dl>
+          <dt><%= usuario.nome %></dt>
+          <dd><%= usuario.cidade %></dd>
+          <dd><%= usuario.estado %></dd>
+          <dd><%= usuario.email %></dd>
+          <dd><%= truncate(strip_tags(usuario.descricao),:length => 100)%></dd>
+        </dl>
+      </td>
+      <td class="list_actions">
+        <div id="botaoa">
+          <%= link_to 'Exibir', usuario %>
+        </div>
+        <div id="botaob">      
+          <%= link_to 'Editar', edit_usuario_path(usuario) %>
+        </div>
+        <div id="botaoa">
+          <%= link_to 'Excluir', usuario, :confirm => 'Deseja realmente excluir usuário?', :method => :delete %>          
+        </div>
+      </td>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @usuarios.each do |usuario| %>
-      <tr>
-        <td><%= usuario.login %></td>
-        <td><%= usuario.senha %></td>
-        <td><%= usuario.foto %></td>
-        <td><%= usuario.nome %></td>
-        <td><%= usuario.cidade %></td>
-        <td><%= usuario.estado %></td>
-        <td><%= usuario.email %></td>
-        <td><%= usuario.descricao %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+    </table>
+    </div>
+    <br />
+    <div id="botaoc">      
+      <%= link_to 'Novo usuário', new_usuario_path %>
+    </div>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="http://localhost:3000/users/sign_in" 
+  </script>
+<% end %>    
 
-<br>
-
-<%= link_to 'New Usuario', new_usuario_path %>

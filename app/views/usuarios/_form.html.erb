@@ -1,49 +1,55 @@
-<%= form_for(@usuario) do |f| %>
-  <% if @usuario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+<%  if current_user != nil %> 
+    <%= form_for(@usuario) do |f| %>
+      <% if @usuario.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@usuario.errors.count, "error") %> impediram o cadastro do usuário:</h2>
 
-      <ul>
-      <% @usuario.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @usuario.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :login %><br>
-    <%= f.text_field :login %>
-  </div>
-  <div class="field">
-    <%= f.label :senha %><br>
-    <%= f.text_field :senha %>
-  </div>
-  <div class="field">
-    <%= f.label :foto %><br>
-    <%= f.text_field :foto %>
-  </div>
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.text_field :estado %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_area :descricao, :rows => 5 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="field">
+        <%= f.label :login %><br>
+        <%= f.text_field :login, :placeholder => 'Email válido' %>
+      </div>
+      <div class="field">
+        <%= f.label :senha %><br>
+        <%= f.password_field :senha, :placeholder => '8 dígitos' %>
+      </div>
+      <div class="field">
+        <%= f.label :foto %><br>
+        <%= f.text_field :foto, :placeholder => 'Url da imagem' %>
+      </div>
+      <div class="field">
+        <%= f.label :nome %><br>
+        <%= f.text_field :nome, :placeholder => 'Nome completo' %>
+      </div>
+      <div class="field">
+        <%= f.label :cidade %><br>
+        <%= f.text_field :cidade, :placeholder => 'Cidade onde mora'  %>
+      </div>
+      <div class="field">
+        <%= f.label :estado %><br>
+        <%= f.text_field :estado, :placeholder => 'Estado onde mora'  %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :placeholder => 'Email válido'  %>
+      </div>
+      <div class="field">
+        <%= f.label :descricao %><br>
+        <%= f.text_area :descricao, :rows => 5, :placeholder => 'Uma breve descrição sobre você'  %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="http://localhost:3000/users/sign_in" 
+  </script>
 <% end %>

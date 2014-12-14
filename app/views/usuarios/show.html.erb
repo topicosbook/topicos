@@ -1,44 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%  if @user != nil %>  
 
-<p>
-  <strong>Login:</strong>
-  <%= @usuario.login %>
-</p>
+  <div id="labelPerfil">
+    <p>
+      <h1>Perfil</h1>
+    </p>
+  </div>
 
-<p>
-  <strong>Senha:</strong>
-  <%= @usuario.senha %>
-</p>
+  <div id="fundo">
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td><%= image_tag(@usuario.foto, :class => 'list_image') %></td>
+        <td>
+          <table>  
+            <tr>
+              <th id="cedula_A">Nome completo: </th>
+              <td><%= @usuario.nome %></td>
+            </tr>
+            <tr>
+              <th id="cedula_B">Cidade: </th>
+              <td><%= @usuario.cidade %></td>
+            </tr>
+            <tr>            
+              <th id="cedula_A">Estado: </th>
+              <td><%= @usuario.estado %></td>
+            </tr>
+            <tr>            
+              <th id="cedula_B">Email: </th>
+              <td><%= @usuario.email %></td>
+            </tr>
+            <tr>            
+              <th id="cedula_A">Descrição: </th>
+              <td><%= @usuario.descricao %></td>
+            </tr>
+          </table>        
+        </td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>Foto:</strong>
-  <%= @usuario.foto %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @usuario.nome %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @usuario.cidade %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @usuario.estado %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @usuario.email %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @usuario.descricao %>
-</p>
-
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+  <div id="botaoc">    
+    <%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+    <%= link_to 'Voltar', usuarios_path %>
+  </div>
+  <% else %>
+    <script type="text/javascript">
+       window.location.href="http://localhost:3000/users/sign_in" 
+    </script>
+<% end %>
